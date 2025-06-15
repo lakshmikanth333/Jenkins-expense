@@ -36,16 +36,16 @@ pipeline {
                 steps {
                     script {
                         sh """
-                        docker build -t backend:1.0 .
+                        docker build -t lakshmikanth333/dockerimage:3.0 .
                         """
                     }
                 }
             }
-            stage('rename the tag') {
+            stage('push') {
                 steps {
                     script {
                         sh """
-                        docker tag backend:1.0 lakshmikanth333/nodedocker:2.0
+                        docker push
                         """
                     }
                 }
@@ -59,7 +59,7 @@ pipeline {
                 echo "pipeline failed"
             }
             always {
-                echo "doesnt matter too me, i alwys show up phew wheew a h yo"
+                echo "doesnt matter too me, i alwys show up phew wheew"
                 deletedir()
             }
         }
