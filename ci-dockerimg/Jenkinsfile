@@ -22,16 +22,17 @@ pipeline {
 
         //     }
         // }
+    // stages {
+    //     stage('dependents') {
+    //         steps {
+    //             script {
+    //                 sh """
+    //                 npm install
+    //                 """
+    //             }
+    //         }
+    //     }
     stages {
-        stage('dependents') {
-            steps {
-                script {
-                    sh """
-                    npm install
-                    """
-                }
-            }
-        }
         stage('docker build') {
             steps {
                 script {
@@ -41,16 +42,16 @@ pipeline {
                 }
             }
         }
-        stage('push') {
-            steps {
-                script {
-                    sh """
-                    docker push
-                    """
-                }
-            }
-        }
-    }
+    //     stage('push') {
+    //         steps {
+    //             script {
+    //                 sh """
+    //                 docker push
+    //                 """
+    //             }
+    //         }
+    //     }
+    // }
     post {
         success {
             echo "pipeline succeeded"
