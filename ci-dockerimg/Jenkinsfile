@@ -42,6 +42,7 @@ pipeline {
                 }
             }
         }
+    }
     //     stage('push') {
     //         steps {
     //             script {
@@ -51,7 +52,7 @@ pipeline {
     //             }
     //         }
     //     }
-    // }
+    
     post {
         success {
             echo "pipeline succeeded"
@@ -65,5 +66,4 @@ pipeline {
         }
     }
 }
-
 
